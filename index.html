@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>3DCaricShop: A Dataset and A Baseline Method for Single-view 3D Caricature Face Reconstruction</title>
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <meta name="google-site-verification" content="vIrKe6Ecwa3TVjmMt0OaJpDGw_SJa5IxzTA86wU44QE" />
+</head>
+
+<body>
+
+<br/>
+<br/>
+
+<div class="w3-container" id="paper">
+    <div class="w3-content" style="max-width:850px">
+  
+    <h2 align="center" id="title"><b>3DCaricShop: A Dataset and A Baseline Method for Single-view 3D Caricature Face Reconstruction</b></h2>
+    <br/>
+    <!-- <p align="center" id="title">Conference Name (NAME), YYYY.</p> -->
+
+    <p align="center" class="center_text" id="authors">
+        <a target="_blank" >Yuda Qiu</a><sup>1,2</sup>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a target="_blank" >Xiaojie Xu</a><sup>2</sup>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a target="_blank" href="https://lingtengqiu.github.io/">Lingteng Qiu</a><sup>1,2</sup>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a target="_blank" >Yan Pan</a><sup>1,2</sup>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a target="_blank" >Yushuang Wu</a><sup>1,2</sup>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a target="_blank" href="http://chenweikai.github.io/">Weikai Chen</a><sup>3</sup>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a target="_blank" href="https://mypage.cuhk.edu.cn/academics/hanxiaoguang/">Xiaoguang Han#</a><sup>1,2*</sup>
+        &nbsp;&nbsp;&nbsp;&nbsp;        
+    </p>
+
+    <p class="center_text" align="center" id="comments">
+        <sup>*</sup>Corresponding email: hanxiaoguang@cuhk.edu.cn  
+    </p>
+    <p class="center_text" align="center">
+        <sup>1</sup>The Chinese University of Hong Kong, Shenzhen
+        &nbsp; &nbsp; &nbsp;
+        <sup>2</sup>Shenzhen Research Institute of Big Data  
+        &nbsp; &nbsp; &nbsp;
+        <sup>3</sup>Tencent America  
+        &nbsp; &nbsp; &nbsp;
+ 
+    </p>
+
+    <br>
+    <center>
+    <img src="paper-teasers.jpg" style="max-width:90%" /></a>
+    </center><br>
+    <p class="center_text" align="center">
+        Figure 1: With 3DCaricShop, the face geometry from a single caricature image can be inferred more accurately.
+    </p>   
+<!--         <h4 align="center" id="title"><b>Submit to our ScanRefer Localization Benchmark <a href="http://kaldir.vc.in.tum.de/scanrefer_benchmark/" target="__blank">here</a>!</b></h4>
+        <br><center><a href="http://kaldir.vc.in.tum.de/scanrefer_benchmark/" target="__blank"><img src="teaser.png" style="max-width:100%" /></a></center><br> -->
+
+        
+        <h3 class="w3-left-align" id="video"><b>Introduction</b></h3>
+        <p>
+            Caricature is an artistic representation that deliberately exaggerates the distinctive features of a human face to convey humor or sarcasm. However, reconstructing a 3D caricature from a 2D caricature image remains a challenging task, mostly due to the lack of data. 
+
+            We propose to fill this gap by introducing 3DCaricShop, the first largescale 3D caricature dataset that contains 2000 high-quality diversified 3D caricatures manually crafted by professional artists. 3DCaricShop also provides rich annotations including a paired 2D caricature image, camera parameters and 3D facial landmarks.
+        </p>
+        <p>            
+            To demonstrate the advantage of 3DCaricShop, we present a novel baseline approach for single-view 3D caricature reconstruction. To ensure a faithful reconstruction with plausible face deformations, we propose to connect the good ends of the detailrich implicit functions and the parametric mesh representations. In particular, we first register a template mesh to the output of the implicit generator and iteratively project the registration result onto a pre-trained PCA space to resolve artifacts and self-intersections. To deal with the large deformation during non-rigid registration, we propose a novel view-collaborative graph convolution network (VCGCN) to extract key points from the implicit mesh for accurate alignment. 
+            
+            Our method is able to generate high-fidelity 3D caricature in a pre-defined mesh topology that is animation-ready. Extensive experiments have been conducted on 3DCaricShop to verify the significance of the database and the effectiveness of the proposed method. 
+
+        </p>
+
+        <h3 class="w3-left-align" id="video"><b>Video</b></h3>
+        <p>
+        Coming soon...
+        <!--         <iframe width="850" height="480" src="https://www.youtube.com/embed/T9J5t-UEcNA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         -->        
+            <!--iframe width="850" height="480" src="vid.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe-->
+        <p/>
+
+
+        <h3 class="w3-left-align" id="publication"><b>Publication</b></h3>
+        <!-- European Conference on Computer Vision (ECCV), 2020. <br/> -->
+        <!-- <a href="davezchen_eccv2020_scanrefer.pdf" target="__blank">Paper</a>  -->
+        Paper - Coming soon<!--<a href="https://arxiv.org/pdf/???" target="__blank">ArXiv - pdf</a> (<a href="https://arxiv.org/abs/2012.???" target="__blank">abs</a>)-->  | <a href="https://github.com/RudyQ/3DCaricShop" target="__blank">GitHub</a>
+        <center>
+            <a href="https://arxiv.org/pdf/2012.???" target="__blank"><img src="paper_preview.PNG" style="max-width:80%" /></a>
+        </center><br>
+
+        If you find our work useful, please consider citing it:
+        <pre class="w3-panel w3-leftbar w3-light-grey" style="white-space: pre-wrap; font-family: monospace; font-size: 11px">
+
+        
+        Coming soon
+        </pre>
+
+        
+        <h3 class="w3-left-align" id="dataset"><b>Dataset</b></h3>
+
+        We contribute to 3DCaricShop dataset, a large collection to caricature face images and the corresponding 3D models manully crafted. The dataset proposed has two appealing features:
+        <ul>
+        <li>Firstly, 3DCaricShop contains <strong>2000</strong> models reconstructed from diverse 2D caricature images, which covers <strong>247</strong> celebrities. To the best of our knowledge, 3DCaricShop is the first largescale 3D caricature dataset manually crafted by professional artists. </li>
+        <li>Secondly, 3DCaricShop contains rich annotations including <strong>3D key points</strong> and the corresponded <strong>transform matrix</strong> for images. In addition, the 3D meshes in 3DCaricShop are <strong>topologically uniform</strong>.</li>
+        </ul>
+        <h5 class="w3-text-grey" id="dataset_exam"><b>Data Examples</b></h3>
+  
+        <center>
+            <img src="paper-dataset.jpg" style="max-width:80%" /></a>
+        </center><br>    
+        <p class="center_text" align="center">
+        Figure 2:Examples of 3DCaricShop.
+        </p>    
+        
+        <h5 class="w3-text-grey" id="dataset_stat"><b>Dataset Statistics</b></h3>
+        <p>
+        We quantitatively analyze our dataset by comparing the shape variations with two normal face datasets (FaceWarehouse and FaceScape), as well as one synthetic caricature dataset, FaceWarehouse with deformation (Aug. FaceWarehouse). We measure the shape variation using global and part variance. In particular, the variance is computed between the models and their corresponding mean shape of each dataset in terms of per-vertex displacement. The results are presented below. The shape diversity of our dataset is richer than the normal ones. For most of the face regions, 3DCaricShop has larger shape variance than Aug. FaceWarehouse. 
+        </p>
+
+        <center>
+            <table border='1px' style='text-align:center;width:80%'>
+            <tr>
+            <th> Dataset </th> <th> Global </th> <th> Eye </th> <th> Nose </th> <th> Mouth </th> <th> Ear </th> <th> Cheek </th> <th> Face</th>
+            </tr>
+            <tr><td> FaceWarehouse</td><td>3.41</td><td> 0.71 </td><td>0.61 </td> <td> 2.60 </td><td> 4.41 </td><td> 1.43 </td><td> 3.40 </td> </tr>
+            <tr><td> FaceScape</td><td>2.17</td><td> 0.36</td><td>0.15</td> <td> 2.63 </td><td> 5.57 </td><td> 1.24 </td><td> 2.27 </td> </tr>
+            <tr><td> Aug. FaceWarehouse</td> <td>5.06</td> <td>1.98</td> <td><strong>6.29</strong> </td> <td>2.07 </td> <td> <strong>9.38</strong> </td><td> 5.26 </td> <td> 5.10 </td> </tr>
+            <tr><td> 3DCaricShop</td> <td> <strong>8.26</strong></td> <td>  <strong>4.68</strong></td> <td>3.04</td> <td> <strong>10.90</strong></td> <td> 9.02 </td> <td> <strong>8.27</strong> </td><td> <strong>6.95</strong> </td> </tr>
+
+            </table>
+        </center>
+                <p class="center_text" align="center">
+        Table 1: The shape variation for 3d face datasets. <!--Note that FaceWarehouse and FaceScape are two normal face datasets, while Aug.FaceWarehouse is a synthetic caricature dataset with deformation.-->
+        </p>
+        
+        <!--<h5 class="w3-text-grey" id="dataset_anno"><b>Dataset Annotations</b></h3>-->
+        
+        <h3 class="w3-left-align" id="experiments"><b>Experiment Results</b></h3>
+        <h5 class="w3-text-grey" id="exp_comp"><b>Benchmarking on Single Image Reconstruction</b></h3>
+        <p>
+        Figure 3 shows qualitative results of our method compared with state-of-the-art methods, including (a) 3DMM from normal face (3DMM-Human) , (b)3DMM from 3DCaricShop (3DMM-Caric) , (c) DF2Net , (d) AliveCaricature-DL and (e) PiFu, on 3DCaricShop. By incorporating deep models with parametric space constraint, our method (g) can reconstruct highly exaggerated geometry without distinct artifacts.
+
+        </p>
+     
+        <center>
+            <img src="paper-exps.jpg" style="max-width:100%" /></a>
+        </center><br> 
+        <p class="center_text" align="center">
+        Figure 3:Experiment results against other methods.
+        </p>   
+        
+        <center>
+            <img src="paper-gallery.jpg" style="max-width:100%" /></a>
+        </center><br>  
+        <p class="center_text" align="center">
+        Figure 4:Results gallery.
+        </p>        
+        
+        <h5 class="w3-text-grey" id="exp_rigging"><b>Rigging Results</b></h3>
+        <p>
+        In the Figure 5, we compare the rigging results with AliveCaricature-DL. Both results are animated using the same skeleton and skinning weights for fair comparison.
+        </p>
+     
+        <center>
+            <img src="paper-rigging.jpg" style="max-width:80%" /></a>
+        </center><br>  
+        <p class="center_text" align="center">
+        Figure 5:Experiment results on rigging.
+        </p>   
+    </div>
+
+
+</div>
+
+<br/>
+<br/>
+
+</body>
+</html>
